@@ -1,11 +1,12 @@
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open('v1').then((cache) => {
+        caches.open('redirector-cache').then((cache) => {
             return cache.addAll([
                 'index.html',
-                'app.js',
-                'config.js',
-                'redirect.js'
+                'css/style.css',
+                'js/app.js',
+                'js/redirect.js',
+                'js/config.js'
             ])
         })
     )
@@ -18,7 +19,7 @@ self.addEventListener('fetch', (event) => {
         } else {
             return fetch(event.request).then((response) => {
                 let responseClone = response.clone()
-                caches.open('v1').then((cache) => {
+                caches.open('redirector-cache').then((cache) => {
                     cache.put(event.request, responseClone)
                 })
                 return response;
