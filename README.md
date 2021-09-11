@@ -4,7 +4,7 @@ A service worker based URL redirector, redirect to an accessible URL form a test
 
 ### Config
 
-The default config stored in `js/config`, the position upper the priority higher, timeout unit `ms`:
+The default config is stored in `js/config`, the position upper the priority higher, with timeout unit `ms`:
 
 ```js
 var testURL = [    
