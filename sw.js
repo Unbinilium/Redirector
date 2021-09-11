@@ -4,6 +4,7 @@ self.addEventListener('install', (event) => {
             return cache.addAll([
                 'index.html',
                 'css/style.css',
+                'img/favicon.png',
                 'js/app.js',
                 'js/redirect.js',
                 'js/config.js'
