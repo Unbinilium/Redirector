@@ -4,16 +4,18 @@ A service worker based URL redirector, redirect to an accessible URL form a test
 
 ### Config
 
-The default config is stored in `js/config`, the position upper the priority higher, with timeout unit `ms`:
+The default config is stored in `js/config`, the position upper the priority higher, with all time unit `ms`:
 
 ```js
-var testURL = [    
-    'http://10.0.0.1',
-    'http://example.com',
-    'http://github.com',
+var testURL = [
+    'https://localhost',
+    'https://google.com',
+    'https://github.com'
 ]
 
 var testTimeout = 1000
+
+var testInterval = 3000
 ```
 
 Please review code for more details.

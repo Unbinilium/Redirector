@@ -1,8 +1,9 @@
-function redirector(url = [], timeout = 1000) {
+function redirector(url = [], timeout = 1000, interval = 3000) {
     const controller = new AbortController()
     const id = setTimeout(() => controller.abort(), timeout)
     let promise = []
     let response = new Array(url.length).fill(false)
+    let redirected = false
     url.forEach((v, i) => {
         promise.push(
             fetch(v, { mode: 'no-cors', signal: controller.signal }).then(() => {
@@ -16,10 +17,17 @@ function redirector(url = [], timeout = 1000) {
     Promise.all(promise).finally(() => {
         for (let i = 0; i != response.length; ++i) {
             if (response[i]) {
+                redirected = true
                 console.log('Redirecting to: ', url[i])
                 window.location.href = url[i]
                 break
             }
+        }
+    }).then(() => {
+        if (!redirected) {
+            setTimeout(() => {
+                redirector(url, timeout, interval)
+            }, interval)
         }
     })
 }

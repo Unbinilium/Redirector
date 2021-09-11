@@ -1,15 +1,11 @@
-function redirectorWrapper() {
-    redirector(testURL, testTimeout)
-}
-
 function loadRedirector() {
     let script = document.createElement('script')
     script.src = 'js/config.js'
-    script.setAttribute('onload', 'redirectorWrapper();')
+    script.setAttribute('onload', 'redirector(testURL, testTimeout, testInterval)')
     document.head.appendChild(script)
 }
 
-function loadServiceworker() {
+function loadServiceWorker() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js', { scope: '/Redirector' }).then((reg) => {
             if (reg.installing) {
@@ -27,7 +23,7 @@ function loadServiceworker() {
 
 document.onreadystatechange = async () => {
     if (document.readyState === 'complete') {
-        loadServiceworker()
+        loadServiceWorker()
         loadRedirector()
     }
 }

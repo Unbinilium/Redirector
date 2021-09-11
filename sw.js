@@ -6,7 +6,7 @@ self.addEventListener('install', (event) => {
                 'css/style.css',
                 'img/favicon.png',
                 'js/app.js',
-                'js/redirect.js',
+                'js/redirector.js',
                 'js/config.js'
             ])
         })
