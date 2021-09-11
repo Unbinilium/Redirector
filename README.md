@@ -16,6 +16,4 @@ var testURL = [
 var testTimeout = 1000
 ```
 
-### Acknowledge
-
-- [MDN - Using Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+Please review code for more details.

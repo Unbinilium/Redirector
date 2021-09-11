@@ -8,7 +8,7 @@ body {
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: sans-serif;
     letter-spacing: 1px
 }
 
@@ -16,14 +16,13 @@ body {
 :after,
 :before {
     box-sizing: border-box;
-    -webkit-transition: all .3s;
     transition: all .3s
 }
 
 .card {
     background: #fbfbfb;
     border-radius: .15em;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
     float: left;
     font-size: 16px;
     left: 50%;
@@ -32,14 +31,13 @@ body {
     position: relative;
     text-align: center;
     top: 50%;
-    -webkit-transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%) translateX(-50%);
     width: 320px
 }
 
 .card:hover {
     background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .2)
 }
 
 .card h1 {
@@ -70,40 +68,16 @@ body {
     100% { transform: rotate(360deg) }
 }
 
-@-webkit-keyframes spin {
-    0%   { -webkit-transform: rotate(0deg) }
-    10%  { -webkit-transform: rotate(0deg) }
-    20%  { -webkit-transform: rotate(90deg) }
-    35%  { -webkit-transform: rotate(90deg) }
-    45%  { -webkit-transform: rotate(180deg) }
-    60%  { -webkit-transform: rotate(180deg) }
-    75%  { -webkit-transform: rotate(270deg) }
-    85%  { -webkit-transform: rotate(270deg) }
-    100% { -webkit-transform: rotate(360deg) }
-}
-
 @keyframes bounce {
     0%   { transform: scaleX(1) }
     10%  { transform: scaleX(1) }
-    20%  { transform: scaleX(0.8) }
-    35%  { transform: scaleX(0.8) }
+    20%  { transform: scaleX(.8) }
+    35%  { transform: scaleX(.8) }
     45%  { transform: scaleX(1) }
     60%  { transform: scaleX(1) }
-    75%  { transform: scaleX(0.8) }
-    85%  { transform: scaleX(0.8) }
+    75%  { transform: scaleX(.8) }
+    85%  { transform: scaleX(.8) }
     100% { transform: scaleX(1) }
-}
-
-@-webkit-keyframes bounce {
-    0%   { -webkit-transform: scaleX(1) }
-    10%  { -webkit-transform: scaleX(1) }
-    20%  { -webkit-transform: scaleX(0.8) }
-    35%  { -webkit-transform: scaleX(0.8) }
-    45%  { -webkit-transform: scaleX(1) }
-    60%  { -webkit-transform: scaleX(1) }
-    75%  { -webkit-transform: scaleX(0.8) }
-    85%  { -webkit-transform: scaleX(0.8) }
-    100% { -webkit-transform: scaleX(1) }
 }
 
 .card .loader {
@@ -122,7 +96,6 @@ body {
     left: 50%;
     position: absolute;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 0
 }
@@ -145,7 +118,6 @@ body {
     left: 50%;
     position: absolute;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%) rotate(45deg);
     transform: translate(-50%, -50%) rotate(45deg);
     width: 14px
 }
@@ -166,7 +138,6 @@ body {
     height: 10px;
     position: absolute;
     top: 13px;
-    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     width: 10px
 }
