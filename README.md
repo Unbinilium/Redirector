@@ -1,10 +1,10 @@
 ## Redirector
 
-A service worker based URL redirector, redirect to an accessible URL form a test list with timeout, load once and redirect eveneven you're offline.
+A service worker based URL redirector, redirect to an accessible URL form a test list with timeout, load once and redirect even you're offline.
 
 ### Config
 
-The default config is stored in `js/config`, the position upper the priority higher, with all time unit `ms`:
+The default config is stored in `js/config`, the `URL` position upper the priority higher, the default time unit for timeout and interval is `ms`:
 
 ```js
 var testURL = [
