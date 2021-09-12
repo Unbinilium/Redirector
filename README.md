@@ -4,7 +4,7 @@ A service worker based URL redirector, redirect to an accessible URL form a test
 
 ### Config
 
-The default config is stored in `js/config`, the `URL` position upper the priority higher, the default time unit for timeout and interval is `ms`:
+The default config is stored in `js/config`:
 
 ```js
 var testURL = [
@@ -18,4 +18,4 @@ var testTimeout = 1000
 var testInterval = 3000
 ```
 
-Please review code for more details.
+The `URL` position upper the priority higher, the default time unit for timeout and interval is `ms`.

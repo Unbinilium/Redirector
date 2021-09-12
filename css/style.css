@@ -124,7 +124,6 @@ body {
 }
 
 .card .loader .spin {
-    -webkit-animation: spin 2.25s linear infinite;
     animation: spin 2.25s linear infinite;
     height: 14px;
     left: 28px;
@@ -146,7 +145,6 @@ body {
 }
 
 .card .loader .bounce {
-    -webkit-animation: bounce 2.25s linear infinite;
     animation: bounce 2.25s linear infinite;
     height: 100%;
     margin: 0 auto;
