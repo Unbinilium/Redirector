@@ -1,10 +1,3 @@
-const loadRedirector = () => {
-    let script = document.createElement('script')
-    script.src = 'js/config.js'
-    script.setAttribute('onload', 'redirector(testURL, testTimeout, testInterval)')
-    document.head.appendChild(script)
-}
-
 const loadServiceWorker = () => {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js', { scope: '/Redirector' }).then((reg) => {
@@ -21,9 +14,16 @@ const loadServiceWorker = () => {
     }
 }
 
-document.onreadystatechange = () => {
+const loadRedirector = () => {
+    let script = document.createElement('script')
+    script.src = 'js/config.js'
+    script.setAttribute('onload', 'redirector(testURL, testTimeout, testInterval)')
+    document.head.appendChild(script)
+}
+
+document.addEventListener('readystatechange', (event) => {
     if (document.readyState === 'complete') {
         loadServiceWorker()
         loadRedirector()
     }
-}
+})
