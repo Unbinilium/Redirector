@@ -1,6 +1,29 @@
+:root {
+    color-scheme: light dark;
+    --background: #e3e3e3;
+    --base-color: #111;
+    --text-color: #303030;
+    --card-color: #fbfbfb;
+    --card-color-hover: #fff;
+    --card-shadow: rgba(17, 17, 17, .1);
+    --card-shadow-hover: rgba(17, 17, 17, .2);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #111;
+        --base-color: #fbfbfb;
+        --text-color: #e3e3e3;
+        --card-color: #303030;
+        --card-color-hover: #383838;
+        --card-shadow: rgba(56, 56, 56, .1);
+        --card-shadow-hover: rgba(56, 56, 56, .2);
+    }
+}
+
 html,
 body {
-    background: #e3e3e3;
+    background: var(--background);
     height: 100%;
     margin: 0;
     overflow-x: hidden;
@@ -20,9 +43,9 @@ body {
 }
 
 .card {
-    background: #fbfbfb;
+    background: var(--card-color);
     border-radius: .15em;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 3px var(--card-shadow);
     float: left;
     font-size: 16px;
     left: 50%;
@@ -36,12 +59,12 @@ body {
 }
 
 .card:hover {
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, .2)
+    background: var(--card-color-hover);
+    box-shadow: 0 4px 6px var(--card-shadow-hover);
 }
 
 .card h1 {
-    color: #111;
+    color: var(--base-color);
     font-size: 24px;
     font-weight: 400;
     margin: 8px 0 24px;
@@ -49,7 +72,7 @@ body {
 }
 
 .card p {
-    color: #303030;
+    color: var(--text-color);
     font-weight: 300;
     line-height: 24px;
     margin: 8px 0 24px;
@@ -89,7 +112,7 @@ body {
 }
 
 .card .loader:before {
-    border: 2px solid #111;
+    border: 2px solid var(--base-color);
     box-sizing: content-box;
     content: '';
     height: 0;
@@ -111,7 +134,7 @@ body {
 }
 
 .card .loader .spin:before {
-    border: 3px solid #111;
+    border: 3px solid var(--base-color);
     box-sizing: content-box;
     content: '';
     height: 14px;
@@ -143,13 +166,13 @@ body {
 }
 
 .card .loader .bounce:before {
-    border-bottom: 3px solid #111;
-    border-left: 3px solid #111;
+    border-bottom: 3px solid var(--base-color);
+    border-left: 3px solid var(--base-color);
     left: 0
 }
 
 .card .loader .bounce:after {
-    border-right: 3px solid #111;
-    border-top: 3px solid #111;
+    border-right: 3px solid var(--base-color);
+    border-top: 3px solid var(--base-color);
     right: 0
 }
