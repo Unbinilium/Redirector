@@ -20,7 +20,7 @@ function redirector(url = [], timeout = 1000, interval = 3000) {
             if (response[i]) {
                 redirected = true
                 let targetURL = new URL(url[i])
-                if (baseParm.startsWith('to?=')) {
+                if (baseParm.startsWith('?to=')) {
                     targetURL = new URL(baseParm.substring(4), targetURL.href)
                 }
                 console.log('Redirecting to: ', targetURL.href)
