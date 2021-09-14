@@ -1,9 +1,8 @@
 async function redirector(urls = [], timeout = 1000, interval = 3000) {
     const baseParm = window.location.search
-    let promises = new Array()
     const controller = new AbortController()
     const id = setTimeout(() => { controller.abort() }, timeout)
-    urls.forEach((url, index) => {
+    let promises = []; urls.forEach((url, index) => {
         promises.push(new Promise((resolve, reject) => {
             fetch(url, {
                 mode: 'no-cors', signal: controller.signal
