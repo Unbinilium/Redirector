@@ -23,7 +23,7 @@ self.addEventListener('fetch', (event) => {
                 caches.open('redirector-cache').then((cache) => {
                     cache.put(event.request, responseClone)
                 })
-                return response;
+                return response
             })
         }
     }))
